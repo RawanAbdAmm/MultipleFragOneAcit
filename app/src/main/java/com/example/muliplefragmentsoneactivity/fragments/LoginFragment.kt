@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.Toast
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.muliplefragmentsoneactivity.R
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -49,11 +50,11 @@ class LoginFragment : Fragment() {
             if (username.isNotBlank() && password.isNotBlank()) {
                 CoroutineScope(Dispatchers.Main).launch {
                     try {
-                            withContext(Dispatchers.IO) {
+                        withContext(Dispatchers.IO) {
                             loginRepository.login(username, password)
                         }
-                        Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT)
-                            .show()
+                        Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
+                        findNavController().navigate(R.id.action_loginFragment_to_productListFragment)
                     } catch (e: HttpException) {
                         Toast.makeText(
                             requireContext(),

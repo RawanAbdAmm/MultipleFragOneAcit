@@ -1,5 +1,6 @@
 package com.example.muliplefragmentsoneactivity.helper
 
+import com.example.muliplefragmentsoneactivity.Models.LoginResponse
 import com.example.muliplefragmentsoneactivity.Models.Product
 import com.example.muliplefragmentsoneactivity.Models.UserModel
 import retrofit2.http.Body
@@ -14,6 +15,3 @@ interface ApiService {
     suspend fun login(@Body loginRequest: UserModel): LoginResponse
 }
 
-data class LoginResponse(
-    val token: String
-)
