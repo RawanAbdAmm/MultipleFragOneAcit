@@ -3,10 +3,12 @@ package com.example.muliplefragmentsoneactivity.fragments
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.muliplefragmentsoneactivity.Models.Product
 import com.example.muliplefragmentsoneactivity.R
+import com.squareup.picasso.Picasso
 
 
 class ProductAdapter(private var products: List<Product>) :
@@ -21,6 +23,7 @@ class ProductAdapter(private var products: List<Product>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = products[position]
         holder.bind(product)
+
     }
 
     override fun getItemCount(): Int {
@@ -34,10 +37,17 @@ class ProductAdapter(private var products: List<Product>) :
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val titleTextView: TextView = itemView.findViewById(R.id.textViewTitle)
         private val descriptionTextView: TextView = itemView.findViewById(R.id.textViewDescription)
+        private val productImageView: ImageView = itemView.findViewById(R.id.imageViewProduct)
 
         fun bind(product: Product) {
             titleTextView.text = product.title
             descriptionTextView.text = product.description
+
+            if (product.images.isNotEmpty()) {
+                Picasso.get()
+                    .load(product.images[0])
+                    .into(productImageView)
+            }
         }
     }
 }
