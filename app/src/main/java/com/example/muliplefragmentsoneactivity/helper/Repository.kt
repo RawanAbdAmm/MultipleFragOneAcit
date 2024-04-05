@@ -1,5 +1,6 @@
 package com.example.muliplefragmentsoneactivity.helper
 
+import com.example.muliplefragmentsoneactivity.Models.LoginResponse
 import com.example.muliplefragmentsoneactivity.Models.Product
 import com.example.muliplefragmentsoneactivity.Models.UserModel
 
@@ -11,6 +12,6 @@ class Repository(private val apiService: ApiService) {
     }
 
     suspend fun getProducts(): List<Product> {
-        return apiService.getProducts()
+        return apiService.getProducts().products
     }
 }

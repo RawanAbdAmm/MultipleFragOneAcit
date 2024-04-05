@@ -13,6 +13,4 @@ val category: String,
 val thumbnail: String,
 val images: List<String>
 )
-data class LoginResponse(
-    val token: String
-)
+data class ProductResponse(val products: List<Product>)
