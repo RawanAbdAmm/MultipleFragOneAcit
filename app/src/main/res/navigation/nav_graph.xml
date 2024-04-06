@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.example.muliplefragmentsoneactivity.fragments.ProductDetailsFragment"
+        android:name="com.example.muliplefragmentsoneactivity.fragments.ProductDetailFragment"
         android:label="fragment_product_details"
         tools:layout="@layout/fragment_product_details" />
 

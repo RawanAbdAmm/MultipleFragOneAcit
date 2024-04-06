@@ -6,4 +6,9 @@
     <string name="Login">login_button</string>
     <string name="welcome_message">Welcome!</string>
     <string name="welcome">Welcome!</string>
+    <string name="product_title">Product Title</string>
+    <string name="product_description">Product Description</string>
+    <string name="product_brand">Product Brand</string>
+    <string name="product_category">Product category</string>
+    <string name="product_price">Product price</string>
 </resources>
